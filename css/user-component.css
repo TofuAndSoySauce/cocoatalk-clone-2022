@@ -31,3 +31,13 @@
   height: 50px;
   border-radius: 20px;
 }
+.user-component__time {
+  margin-bottom: 5px;
+  display: block;
+}
+.user-component__column:nth-child(3) {
+  color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
