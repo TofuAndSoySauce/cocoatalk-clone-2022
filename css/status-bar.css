@@ -1,7 +1,8 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  height: 500vh;
+  height: 100vh;
+  color: rgb(49, 48, 48);
 }
 div:first-child {
   display: flex;
@@ -15,11 +16,11 @@ div:first-child {
 .status-bar__column {
   width: 33%;
   position: fixed;
-
   box-sizing: border-box;
+  z-index: 1;
 }
 
-.status-bar__column:first-child span {
+.status-bar__column:first-child {
   margin-right: 5px;
   left: 0;
   width: 33%;
@@ -28,10 +29,10 @@ div:first-child {
   display: flex;
   justify-content: center;
   margin-top: 5px;
-  top: 0;
+  left: 0;
   width: 99%;
 }
-.status-bar__column:last-child {
+.status-bar__column:nth-child(3) {
   display: flex;
   justify-content: flex-end;
   align-items: center;
