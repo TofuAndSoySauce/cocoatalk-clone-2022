@@ -13,3 +13,14 @@
   margin-left: 35px;
   position: relative;
 }
+@keyframes rotateCog {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(180deg);
+  }
+}
+.screen-header .fa-cog:hover {
+  animation: rotateCog 0.5s linear infinite forwards;
+}
