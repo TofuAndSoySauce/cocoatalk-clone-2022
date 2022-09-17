@@ -1,0 +1,55 @@
+$(function(){
+	$(window).load(function(){
+		thumbResize();
+	});
+	$(window).resize(function(){
+		thumbResize();
+	});
+	
+	// 클릭오픈
+	$(".clickOpen > a").on("click",function(event){
+		var t = $(this);
+		if(t.next().css('display') == 'none'){
+			$(".clickOpen > div,.clickOpen > ul").hide();
+			t.next().show();
+			$(".clickOpen").removeClass("on");
+			$(this).parents(".clickOpen").addClass("on");
+		}else{
+			$(".clickOpen > div,.clickOpen > ul").hide();
+			$(".clickOpen").removeClass("on");
+		}
+		event.preventDefault()
+	});
+	$(".clickOpen a.clickClose").on("click",function(event){
+		$(".clickOpen > div,.clickOpen > ul").hide();
+		$(".clickOpen").removeClass("on");
+		event.preventDefault()
+	});
+
+	$(".dropdown-toggle").attr('title','선택목록 축소됨');
+	$(".dropdown-toggle").on("click",function(event){
+		$(this).next().slideToggle('slow', function() {
+	        if ($(this).is(':visible')) {
+	             $(".dropdown-toggle").attr('title','선택목록 확장됨');
+	        } else {
+	            $(".dropdown-toggle").attr('title','선택목록 축소됨');
+	        }        
+	    }); 
+  	});
+
+	//이미지 리사이즈 시작
+	function thumbResize(){
+		$(".thumbResize_A img").each(function() {
+			$(this).removeAttr("style");
+			var thumbHeight = $(this).parent().height();
+			var imgHeight = $(this).height();
+
+			if(thumbHeight > imgHeight){
+				$(this).css({"width":"auto","height":"100%"});
+			}else{
+				$(this).css({"width":"100%","height":"auto"});
+			}
+		});
+	}
+	//이미지 리사이즈 끝
+});

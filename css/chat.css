@@ -101,7 +101,7 @@
   justify-content: space-between;
   padding: 5px 20px;
   align-items: center;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .reply input {
   height: 30px;
@@ -109,7 +109,7 @@
   border: solid var(--main-border);
   border-radius: 20px;
   padding: 3px;
-  transition: all 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .reply .reply__column:first-child {
